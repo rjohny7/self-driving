@@ -23,7 +23,7 @@ class Car {
         }
         //add friction
         this.v += (this.v < 0 ? this.friction :  -this.friction)
-        if (Math.abs(this.v) < this.friction) {
+        if (Math.abs(this.v) <= this.friction) {
             this.v = 0;
         }
         // cap speeds at 5
@@ -35,14 +35,14 @@ class Car {
         }
         this.xloc -= Math.sin(this.angle)*this.v;
         this.yloc -= Math.cos(this.angle)*this.v;
-        if (this.controls.left) {
+        if (this.controls.left && this.v != 0) {
             this.angle += 0.05;
         }
-        if (this.controls.right) {
+        if (this.controls.right && this.v != 0) {
             this.angle -= 0.05;
         }
     }
-    draw(ctx) {
+    move(ctx) {
         ctx.save();
         ctx.translate(this.xloc,this.yloc);
         ctx.rotate(-this.angle);
