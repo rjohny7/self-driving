@@ -1,5 +1,5 @@
-class Controls{
-    constructor(){
+class Controls {
+    constructor() {
         this.up = false;
         this.down = false;
         this.left = false;

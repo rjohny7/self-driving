@@ -12,7 +12,7 @@ move();
 function move(){
     car.update();
     //refreshing canvas also clears it
-    canvas.height=window.innerHeight;
+    canvas.height = window.innerHeight;
     car.draw(ctxt);
     //creates move functions to create movement illusion
     requestAnimationFrame(move);
